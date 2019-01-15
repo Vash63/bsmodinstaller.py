@@ -81,3 +81,5 @@ if __name__ == '__main__':
         prefix = os.path.realpath('../../compatdata/620980/pfx/')
         os.environ['WINEPREFIX'] = prefix
         subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
+    else:
+        print("IPA.exe has already been run. Skipping.")
