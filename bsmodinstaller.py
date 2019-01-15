@@ -84,4 +84,4 @@ if __name__ == '__main__':
         else:
             subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
     else:
-    print("IPA.exe has already been run. Skipping.")
+        print("IPA.exe has already been run. Skipping.")
