@@ -77,6 +77,7 @@ if __name__ == '__main__':
     for item in mods:
         mod.install(item)
 
-    prefix = os.path.realpath('../../compatdata/620980/pfx/')
-    os.environ['WINEPREFIX'] = prefix
-    subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
+    if len(os.listdir('IPA/Backups/Beat Saber')) == 0:
+        prefix = os.path.realpath('../../compatdata/620980/pfx/')
+        os.environ['WINEPREFIX'] = prefix
+        subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
