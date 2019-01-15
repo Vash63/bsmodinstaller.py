@@ -1,1 +1,15 @@
-Beat\ Saber/
+Beat\ Saber.exe
+Beat\ Saber_Data/
+MonoBleedingEdge/
+UnityCrashHandler64.exe
+UnityPlayer.dll
+BeatSaberVersion.txt
+Plugins/
+CustomSongs/
+IPA.exe
+IPA/
+Mono.Cecil.dll
+Playlists/
+song_browser_settings.xml
+song_browser_settings.xml.bak
+UserData/
