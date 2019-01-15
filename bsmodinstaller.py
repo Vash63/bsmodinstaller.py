@@ -77,9 +77,11 @@ if __name__ == '__main__':
     for item in mods:
         mod.install(item)
 
-    if len(os.listdir('IPA/Backups/Beat Saber')) == 0:
-        prefix = os.path.realpath('../../compatdata/620980/pfx/')
-        os.environ['WINEPREFIX'] = prefix
-        subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
-    else:
+#Checks if running on Windows and skips the IPA.exe installer if so (not yet implemented)
+    if os.name != 'nt':
+        if len(os.listdir('IPA/Backups/Beat Saber')) == 0:
+            prefix = os.path.realpath('../../compatdata/620980/pfx/')
+            os.environ['WINEPREFIX'] = prefix
+            subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
+        else:
         print("IPA.exe has already been run. Skipping.")
