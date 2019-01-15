@@ -3,6 +3,7 @@ import abc
 import json,requests,os,subprocess
 from io import BytesIO
 from zipfile import ZipFile
+from sys import exit
 
 class mod_installer(abc.ABCMeta):
     def __new__(cls, install_data):
@@ -125,7 +126,7 @@ mods = [
 
 if __name__ == '__main__':
     if os.getcwd().split(os.sep)[-1] != "Beat Saber":
-        sys.exit("Please run this from the Beat Saber directory")
+        exit("Please run this from the Beat Saber directory")
 
     if not os.path.isdir('./UserData'):
         os.mkdir('./UserData')
