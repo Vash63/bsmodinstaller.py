@@ -132,12 +132,7 @@ if __name__ == '__main__':
         os.mkdir('./UserData')
 
     for mod in mods:
-        try:
-            mod_installer(install_data=mod)
-        except Exception as E:
-            print('Ran into an issue wile installing the following mod:\n %s' %(mod))
-            print('Error that as encountered was:')
-            print(E)
+        mod_installer(install_data=mod)
 
     prefix = os.path.realpath('../../compatdata/620980/pfx/')
     os.environ['WINEPREFIX'] = prefix
