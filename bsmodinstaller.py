@@ -93,7 +93,7 @@ mods = [
   {
     "name": "songbrowser",
     "url": "https://www.modsaber.org/registry/songbrowserplugin", 
-    "enabled": True
+    "enabled": True,
     "type": "modsaber",
   },
   {
