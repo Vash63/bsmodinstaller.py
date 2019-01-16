@@ -15,7 +15,6 @@ class mod:
                 zip_url = modsaber_meta_data.get('files', {}).get('steam', {}).get('url')
                 zip_data = BytesIO(requests.get(zip_url).content)
                 ZipFile(zip_data).extractall()
-                print('Installation of %s complete' %(mod_name))
             elif mod['type'] == 'brian91292_dll':
                 metadata_url = mod.get('url')
                 dll_dest = mod.get('destination')
@@ -91,3 +90,5 @@ if __name__ == '__main__':
             subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
     else:
         print("IPA.exe has already been run. Skipping.")
+
+    print("Mods installed successfully!")
