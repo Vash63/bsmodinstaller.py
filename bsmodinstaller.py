@@ -47,6 +47,12 @@ mods = [
         "type": "modsaber",
     },
     {
+        "name": "scoresaber",
+        "url": "https://www.modsaber.org/registry/scoresaber",
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
         "name": "nsjson",
         "url": "https://www.modsaber.org/registry/newtonsoft-json", 
         "enabled": True,
