@@ -28,43 +28,43 @@ class mod:
                     F.write(dll_contents)
 
 mods = [
-  {
-    "name": "songloader",
-    "url": "https://www.modsaber.org/registry/song-loader/", 
-    "enabled": True,
-    "type": "modsaber",
-  }, 
-  {
-    "name": "songbrowser",
-    "url": "https://www.modsaber.org/registry/songbrowserplugin", 
-    "enabled": True,
-    "type": "modsaber",
-  },
-  {
-    "name": "customui",
-    "url": "https://www.modsaber.org/registry/customui/", 
-    "enabled": True,
-    "type": "modsaber",
-  },
-  {
-    "name": "nsjson",
-    "url": "https://www.modsaber.org/registry/newtonsoft-json", 
-    "enabled": True,
-    "type": "modsaber",
-  },
-  {
-    "name": "harmony",
-    "url": "https://www.modsaber.org/registry/harmony", 
-    "enabled": True,
-    "type": "modsaber",
-  },
-  {
-    "name": "syncsaber",
-    "url": "https://api.github.com/repos/brian91292/SyncSaber/releases/latest", 
-    "enabled": True,
-    "type": "brian91292_dll",
-    "destination": "./Plugins/SyncSaber.dll",
-  }
+    {
+        "name": "songloader",
+        "url": "https://www.modsaber.org/registry/song-loader/", 
+        "enabled": True,
+        "type": "modsaber",
+    }, 
+    {
+        "name": "songbrowser",
+        "url": "https://www.modsaber.org/registry/songbrowserplugin", 
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
+        "name": "customui",
+        "url": "https://www.modsaber.org/registry/customui/", 
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
+        "name": "nsjson",
+        "url": "https://www.modsaber.org/registry/newtonsoft-json", 
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
+        "name": "harmony",
+        "url": "https://www.modsaber.org/registry/harmony", 
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
+        "name": "syncsaber",
+        "url": "https://api.github.com/repos/brian91292/SyncSaber/releases/latest", 
+        "enabled": True,
+        "type": "brian91292_dll",
+        "destination": "./Plugins/SyncSaber.dll",
+    }
 ]
 
 if __name__ == '__main__':
