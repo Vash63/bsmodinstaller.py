@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import json,requests,os,subprocess
 from io import BytesIO
 from zipfile import ZipFile
