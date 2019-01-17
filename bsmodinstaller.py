@@ -52,6 +52,12 @@ mods = [
         "type": "modsaber",
     },
     {
+        "name": "befitness",
+        "url": "https://www.modsaber.org/registry/befitness/",
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
         "name": "nsjson",
         "url": "https://www.modsaber.org/registry/newtonsoft-json", 
         "enabled": True,
