@@ -4,28 +4,6 @@ from io import BytesIO
 from zipfile import ZipFile
 from sys import exit
 
-class mod:
-    def install(mod):
-        if mod['enabled'] == True:
-            if mod['type'] == 'modsaber':
-                modsaber_url = mod.get('url')
-                mod_name = mod.get('name')
-                print('Installing %s from modsaber...' %(mod_name))
-                modsaber_meta_data = requests.get(modsaber_url).json()
-                zip_url = modsaber_meta_data.get('files', {}).get('steam', {}).get('url')
-                zip_data = BytesIO(requests.get(zip_url).content)
-                ZipFile(zip_data).extractall()
-            elif mod['type'] == 'brian91292_dll':
-                metadata_url = mod.get('url')
-                dll_dest = mod.get('destination')
-                mod_name = mod.get('name')
-                print('Installing %s to %s...' %(mod_name, dll_dest))
-                metadata = requests.get(metadata_url).json()
-                dll_url = metadata.get('assets', [])[0].get("browser_download_url")
-                dll_contents = requests.get(dll_url).content
-                with open(dll_dest, 'wb') as F:
-                    F.write(dll_contents)
-
 mods = [
     {
         "name": "songloader",
@@ -77,6 +55,29 @@ mods = [
         "destination": "./Plugins/SyncSaber.dll",
     }
 ]
+
+class mod:
+    def install(mod):
+        if mod['enabled'] == True:
+            if mod['type'] == 'modsaber':
+                modsaber_url = mod.get('url')
+                mod_name = mod.get('name')
+                print('Installing %s from modsaber...' %(mod_name))
+                modsaber_meta_data = requests.get(modsaber_url).json()
+                zip_url = modsaber_meta_data.get('files', {}).get('steam', {}).get('url')
+                zip_data = BytesIO(requests.get(zip_url).content)
+                ZipFile(zip_data).extractall()
+            elif mod['type'] == 'brian91292_dll':
+                metadata_url = mod.get('url')
+                dll_dest = mod.get('destination')
+                mod_name = mod.get('name')
+                print('Installing %s to %s...' %(mod_name, dll_dest))
+                metadata = requests.get(metadata_url).json()
+                dll_url = metadata.get('assets', [])[0].get("browser_download_url")
+                dll_contents = requests.get(dll_url).content
+                with open(dll_dest, 'wb') as F:
+                    F.write(dll_contents)
+
 
 if __name__ == '__main__':
     if os.getcwd().split(os.sep)[-1] != "Beat Saber":
