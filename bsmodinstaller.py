@@ -88,13 +88,18 @@ if __name__ == '__main__':
     for item in mods:
         mod.install(item)
 
-    if len(os.listdir('IPA/Backups/Beat Saber')) == 0:
-        if os.name != 'nt':
+    if os.path.isdir('./IPA/Backups'):
+        if len(os.listdir('IPA/Backups/Beat Saber')) != 0:
+            print("IPA.exe has already been run. Skipping.")
+        elif os.name != 'nt':
             os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
             subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
         else:
             subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
+    elif os.name != 'nt':
+        os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
+        subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
     else:
-        print("IPA.exe has already been run. Skipping.")
+        subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
 
     print("Mods installed successfully!")
