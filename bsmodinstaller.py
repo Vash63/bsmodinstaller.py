@@ -78,6 +78,13 @@ class mod:
                 with open(dll_dest, 'wb') as F:
                     F.write(dll_contents)
 
+class ipa:
+    def install():
+        if os.name != 'nt':
+            os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
+            subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
+        else:
+            subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
 
 if __name__ == '__main__':
     if os.getcwd().split(os.sep)[-1] != "Beat Saber":
@@ -89,18 +96,8 @@ if __name__ == '__main__':
     for item in mods:
         mod.install(item)
 
-    if os.path.isdir('./IPA/Backups'):
-        if len(os.listdir('IPA/Backups/Beat Saber')) != 0:
-            print("IPA.exe has already been run. Skipping.")
-        elif os.name != 'nt':
-            os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
-            subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
-        else:
-            subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
-    elif os.name != 'nt':
-        os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
-        subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
-    else:
-        subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
+    if os.path.isdir('./IPA/Backups') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
+        print("IPA.exe has already been run. Skipping.")
+    else ipa.install()
 
     print("Mods installed successfully!")
