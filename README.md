@@ -1,5 +1,5 @@
 # bsmodinstaller.py
-Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods
+Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods. Always the latest version, so you can re-run the script to freshen your mods to their latest release!
 
 # Linux Instructions
 Copy bsmodinstaller.py to your 'Beat Saber' directory and run it.
