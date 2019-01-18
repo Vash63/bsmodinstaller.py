@@ -1,8 +1,14 @@
 # bsmodinstaller.py
 Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods
 
-# Instructions
-Copy bsmodinstaller.py to your 'Beat Saber' directory and run it. Requires Python 3. 
+# Linux Instructions
+Copy bsmodinstaller.py to your 'Beat Saber' directory and run it.
+
+# Windows instructions
+1. Install Python 3 if you don't already have it.
+2. Open up a CMD or PS window in the Beat Saber directory (Shift + Right Click -> Open In PS/Command).
+3. Run 'python -m pip install requests' to install requests dependency.
+4. Run installer with 'python .\bsmodinstaller.py' or double click the file.
 
 # Optionally
 Review script and disable mods that you don't want installed by setting "enabled" to False in the dictionary.
