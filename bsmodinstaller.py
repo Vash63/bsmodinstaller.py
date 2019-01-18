@@ -98,6 +98,7 @@ if __name__ == '__main__':
 
     if os.path.isdir('./IPA/Backups') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
         print("IPA.exe has already been run. Skipping.")
-    else ipa.install()
+    else:
+        ipa.install()
 
     print("Mods installed successfully!")
