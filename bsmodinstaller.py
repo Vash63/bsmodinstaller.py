@@ -18,6 +18,12 @@ mods = [
         "type": "modsaber",
     },
     {
+        "name": "beatsaverdownloader",
+        "url": "https://www.modsaber.org/registry/beatsaverdownloader",
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
         "name": "customui",
         "url": "https://www.modsaber.org/registry/customui/", 
         "enabled": True,
