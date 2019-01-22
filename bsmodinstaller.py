@@ -9,7 +9,7 @@ from io import BytesIO
 from zipfile import ZipFile
 import requests
 
-mods = [
+MODS = [
     {
         "name": "songloader",
         "url": "https://www.modsaber.org/registry/song-loader/",
@@ -67,9 +67,11 @@ mods = [
     }
 ]
 
-class mod:
-    def install(mod):
-        if mod['enabled'] == True:
+class installer:
+    @staticmethod
+    def install_mod(mod: dict):
+        '''Installs a given mod'''
+        if mod['enabled'] is True:
             if mod['type'] == 'modsaber':
                 modsaber_url = mod.get('url')
                 mod_name = mod.get('name')
@@ -90,7 +92,9 @@ class mod:
                     library.write(dll_contents)
 
 class ipa:
+    @staticmethod
     def install():
+        '''Runs the IPA Unity injector'''
         if os.name != 'nt':
             os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
             subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
@@ -104,8 +108,8 @@ if __name__ == '__main__':
     if not os.path.isdir('./UserData'):
         os.mkdir('./UserData')
 
-    for item in mods:
-        mod.install(item)
+    for item in MODS:
+        installer.install_mod(item)
 
     if os.path.isdir('./IPA/Backups') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
         print("IPA.exe has already been run. Skipping.")
