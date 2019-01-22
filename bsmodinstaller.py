@@ -1,25 +1,30 @@
 #!/usr/bin/env python3
-import json,requests,os,subprocess
+"""
+Downloads and installs the latest version of various Beat Saber mods.
+"""
+import os
+import subprocess
+import sys
 from io import BytesIO
 from zipfile import ZipFile
-from sys import exit
+import requests
 
 mods = [
     {
         "name": "songloader",
-        "url": "https://www.modsaber.org/registry/song-loader/", 
+        "url": "https://www.modsaber.org/registry/song-loader/",
         "enabled": True,
         "type": "modsaber",
-    }, 
+    },
     {
         "name": "songbrowser",
-        "url": "https://www.modsaber.org/registry/songbrowserplugin", 
+        "url": "https://www.modsaber.org/registry/songbrowserplugin",
         "enabled": True,
         "type": "modsaber",
     },
     {
         "name": "customui",
-        "url": "https://www.modsaber.org/registry/customui/", 
+        "url": "https://www.modsaber.org/registry/customui/",
         "enabled": True,
         "type": "modsaber",
     },
@@ -37,19 +42,19 @@ mods = [
     },
     {
         "name": "nsjson",
-        "url": "https://www.modsaber.org/registry/newtonsoft-json", 
+        "url": "https://www.modsaber.org/registry/newtonsoft-json",
         "enabled": True,
         "type": "modsaber",
     },
     {
         "name": "harmony",
-        "url": "https://www.modsaber.org/registry/harmony", 
+        "url": "https://www.modsaber.org/registry/harmony",
         "enabled": True,
         "type": "modsaber",
     },
     {
         "name": "syncsaber",
-        "url": "https://api.github.com/repos/brian91292/SyncSaber/releases/latest", 
+        "url": "https://api.github.com/repos/brian91292/SyncSaber/releases/latest",
         "enabled": True,
         "type": "brian91292_dll",
         "destination": "./Plugins/SyncSaber.dll",
@@ -75,13 +80,13 @@ class mod:
                 metadata = requests.get(metadata_url).json()
                 dll_url = metadata.get('assets', [])[0].get("browser_download_url")
                 dll_contents = requests.get(dll_url).content
-                with open(dll_dest, 'wb') as F:
-                    F.write(dll_contents)
+                with open(dll_dest, 'wb') as library:
+                    library.write(dll_contents)
 
 
 if __name__ == '__main__':
     if os.getcwd().split(os.sep)[-1] != "Beat Saber":
-        exit("Please run this from the Beat Saber directory")
+        sys.exit("Please run this from the Beat Saber directory")
 
     if not os.path.isdir('./UserData'):
         os.mkdir('./UserData')
