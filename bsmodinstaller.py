@@ -67,7 +67,8 @@ MODS = [
     }
 ]
 
-class installer:
+class ModInstaller:
+    '''Installer for Beat Saber mods'''
     @staticmethod
     def install_mod(mod: dict):
         '''Installs a given mod'''
@@ -91,10 +92,9 @@ class installer:
                 with open(dll_dest, 'wb') as library:
                     library.write(dll_contents)
 
-class ipa:
     @staticmethod
-    def install():
-        '''Runs the IPA Unity injector'''
+    def inject_ipa():
+        '''Runs the IPA Unity injector against Beat Saber.exe'''
         if os.name != 'nt':
             os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
             subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
@@ -109,11 +109,11 @@ if __name__ == '__main__':
         os.mkdir('./UserData')
 
     for item in MODS:
-        installer.install_mod(item)
+        ModInstaller.install_mod(item)
 
     if os.path.isdir('./IPA/Backups') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
         print("IPA.exe has already been run. Skipping.")
     else:
-        ipa.install()
+        ModInstaller.inject_ipa()
 
     print("Mods installed successfully!")
