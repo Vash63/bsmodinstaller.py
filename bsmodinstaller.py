@@ -41,8 +41,8 @@ MODS = [
         "type": "modsaber",
     },
     {
-        "name": "befitness",
-        "url": "https://www.modsaber.org/registry/befitness/",
+        "name": "YUR Fit",
+        "url": "https://www.modsaber.org/registry/yurfit/",
         "enabled": True,
         "type": "modsaber",
     },
@@ -60,10 +60,9 @@ MODS = [
     },
     {
         "name": "syncsaber",
-        "url": "https://api.github.com/repos/brian91292/SyncSaber/releases/latest",
+        "url": "https://www.modsaber.org/registry/syncsaber",
         "enabled": True,
-        "type": "brian91292_dll",
-        "destination": "./Plugins/SyncSaber.dll",
+        "type": "modsaber",
     }
 ]
 
