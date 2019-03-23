@@ -63,6 +63,12 @@ MODS = [
         "url": "https://www.modsaber.org/registry/syncsaber",
         "enabled": True,
         "type": "modsaber",
+    },
+    {
+        "name": "Illusion Plugin Architecture",
+        "url": "https://www.modsaber.org/registry/illusion-plugin-architecture",
+        "enabled": True,
+        "type": "modsaber",
     }
 ]
 
@@ -96,7 +102,7 @@ class ModInstaller:
         '''Runs the IPA Unity injector against Beat Saber.exe'''
         if os.name != 'nt':
             os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
-            subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
+            subprocess.run('wine ./IPA.exe "Beat Saber.exe" --nowait', shell=True)
         else:
             subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
 
@@ -110,7 +116,7 @@ if __name__ == '__main__':
     for item in MODS:
         ModInstaller.install_mod(item)
 
-    if os.path.isdir('./IPA/Backups') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
+    if os.path.isdir('./IPA/Backups') and os.path.isdir('./IPA/Backups/Beat Saber') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
         print("IPA.exe has already been run. Skipping.")
     else:
         ModInstaller.inject_ipa()
