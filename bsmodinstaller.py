@@ -43,7 +43,7 @@ MODS = [
     {
         "name": "YUR Fit",
         "url": "https://www.modsaber.org/registry/yurfit/",
-        "enabled": True,
+        "enabled": False,
         "type": "modsaber",
     },
     {
@@ -61,6 +61,12 @@ MODS = [
     {
         "name": "syncsaber",
         "url": "https://www.modsaber.org/registry/syncsaber",
+        "enabled": True,
+        "type": "modsaber",
+    },
+    {
+        "name": "bs-utils",
+        "url": "https://www.modsaber.org/registry/bs-utils",
         "enabled": True,
         "type": "modsaber",
     },
@@ -102,7 +108,7 @@ class ModInstaller:
         '''Runs the IPA Unity injector against Beat Saber.exe'''
         if os.name != 'nt':
             os.environ['WINEPREFIX'] = os.path.realpath('../../compatdata/620980/pfx/')
-            subprocess.run('wine ./IPA.exe "Beat Saber.exe" --nowait', shell=True)
+            subprocess.run('wine ./IPA.exe "Beat Saber.exe"', shell=True)
         else:
             subprocess.run('IPA.exe "Beat Saber.exe"', shell=True)
 
