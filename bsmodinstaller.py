@@ -125,6 +125,8 @@ if __name__ == '__main__':
     if os.path.isdir('./IPA/Backups') and os.path.isdir('./IPA/Backups/Beat Saber') and len(os.listdir('IPA/Backups/Beat Saber')) != 0:
         print("IPA.exe has already been run. Skipping.")
     else:
+        print("This hangs when it's done - after it crashes hit ctrl+c. Temporary issue hopefully.")
         ModInstaller.inject_ipa()
 
     print("Mods installed successfully!")
+    print("If this is your first install please run: WINEPREFIX=$(realpath ../../compatdata/620980/pfx/) winetricks dotnet472")

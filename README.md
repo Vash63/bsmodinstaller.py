@@ -1,9 +1,10 @@
-## SUPER BROKEN SINCE Beat Saber v0.13. IPA.exe crashes now when run with wine. Might be other issues. Try release version with beat saber v0.12, or just don't use this anymore. RIP.
 # bsmodinstaller.py
 Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods. Always the latest version, so you can re-run the script to freshen your mods to their latest release!
 
 # Linux Instructions
+Requires wine & winetricks installed.
 Copy bsmodinstaller.py to your 'Beat Saber' directory and run it.
+Install dotnet472 (other versions may also work) with command provided at the printout at the end of the script.
 
 # Windows instructions
 1. Install Python 3 if you don't already have it.
