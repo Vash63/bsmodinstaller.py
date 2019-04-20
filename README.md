@@ -1,3 +1,5 @@
+## WARNING - WIP, new versions of BSIPA and the death of Modsaber have killed this - still working on fixing it. 
+## To anyone trying to get this to work, note my 'winhttp.reg' file just added - this is necessary for _any_ mods to work now
 # bsmodinstaller.py
 Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods. Always the latest version, so you can re-run the script to freshen your mods to their latest release!
 
