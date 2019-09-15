@@ -2,11 +2,13 @@
 ## To anyone trying to get this to work, note my 'winhttp.reg' file just added - this is necessary for _any_ mods to work now
 # bsmodinstaller.py
 Downloads and installs Beat Saber SongLoader, SyncSaber &amp; Other Mods. Always the latest version, so you can re-run the script to freshen your mods to their latest release!
+This script also installs .NET Framework 4.7.2 into the Beat Saber wine prefix. It is a requirement for the new BSIPA mod loader.
+NOTE: This has been tested with Proton 4.2-3.
 
 # Linux Instructions
-Requires wine & winetricks installed.
+Requires wine, winetricks and protontricks installed.
+Requires the requests and packaging python modules.
 Copy bsmodinstaller.py to your 'Beat Saber' directory and run it.
-Install dotnet472 (other versions may also work) with command provided at the printout at the end of the script.
 
 # Windows instructions
 1. Install Python 3 if you don't already have it.
@@ -15,7 +17,8 @@ Install dotnet472 (other versions may also work) with command provided at the pr
 4. Run installer with 'python .\bsmodinstaller.py' or double click the file.
 
 # Optionally
-Review script and disable mods that you don't want installed by setting "enabled" to False in the dictionary.
+Review script and remove or add mods want installed to the BEATMODS list.
+Some mods like SongBrowser are not part of beatmods. You can add such mods by using the RAWMODS list. The url value there can be either a local path or a web address.
 
 # TODO:
 - Test and confirm that it can be run at every game launch to update the DLLs through Steam Launch Options without any major delays.
